@@ -41,7 +41,7 @@ func Unpack(inputString string) (string, error) {
 			isPreviousSymbolSlash = true
 			continue
 		}
-		if unicode.IsLetter(r) != true {
+		if !unicode.IsLetter(r) {
 			return "", ErrInvalidString
 		}
 		if symbolForRepeat != 0 {
